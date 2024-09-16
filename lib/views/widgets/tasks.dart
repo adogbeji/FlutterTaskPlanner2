@@ -10,9 +10,16 @@ class Tasks extends StatefulWidget {
 class _TasksState extends State<Tasks> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Tasks Widget'),
+    return MaterialApp(
+      title: 'Task Planner',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: Scaffold(
+        body: Center(
+          child: Text('Tasks Widget'),
+        ),
       ),
     );
   }
