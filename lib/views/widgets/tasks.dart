@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_planner_2/models/task.dart';
 
 class Tasks extends StatefulWidget {
   const Tasks({super.key});
@@ -8,6 +9,10 @@ class Tasks extends StatefulWidget {
 }
 
 class _TasksState extends State<Tasks> {
+  final List<Task> _registeredTasks = [];
+
+  var activeScreen = 'start-screen';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
