@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_planner_2/models/task.dart';
+import 'package:task_planner_2/views/screens/start_screen.dart';
 
 class Tasks extends StatefulWidget {
   const Tasks({super.key});
@@ -13,19 +14,23 @@ class _TasksState extends State<Tasks> {
 
   var activeScreen = 'start-screen';
 
+  void switchScreen() {
+    setState(() {
+      activeScreen = 'tasks-screen';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    var screenWidget = StartScreen(onStartTasks: switchScreen);
+
     return MaterialApp(
       title: 'Task Planner',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        body: Center(
-          child: Text('Tasks Widget'),
-        ),
-      ),
+      home: screenWidget,
     );
   }
 }
