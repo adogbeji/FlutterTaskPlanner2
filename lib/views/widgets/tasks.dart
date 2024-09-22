@@ -30,7 +30,17 @@ class _TasksState extends State<Tasks> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: screenWidget,
+      // home: screenWidget,
+      home: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.lightBlue, Colors.green]
+            ),
+          ),
+          child: screenWidget,
+        ),
+      ),
     );
   }
 }
