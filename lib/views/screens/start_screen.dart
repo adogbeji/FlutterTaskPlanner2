@@ -7,14 +7,33 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('Task Planner'),
-          ],
-        ),
-      );
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.lightBlue, Colors.green],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        child: Center(
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text('Task Planner', style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                ),),
+
+                OutlinedButton(
+                  onPressed: () {},
+                  child: const Text('Start'),
+                ),
+              ],
+            ),
+          ),
+      ),
+    );
   }
 }
