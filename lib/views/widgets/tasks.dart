@@ -20,6 +20,13 @@ class _TasksState extends State<Tasks> {
     });
   }
 
+  // Add Tasks
+  void _addTask(Task task) {
+    setState(() {
+      _registeredTasks.add(task);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenWidget = StartScreen(onStartTasks: switchScreen);
