@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_planner_2/models/task.dart';
 import 'package:task_planner_2/views/screens/start_screen.dart';
+import 'package:task_planner_2/views/screens/tasks_screen.dart';
 
 class Tasks extends StatefulWidget {
   const Tasks({super.key});
@@ -53,7 +54,11 @@ class _TasksState extends State<Tasks> {
 
   @override
   Widget build(BuildContext context) {
-    var screenWidget = StartScreen(onStartTasks: switchScreen);
+    Widget screenWidget = StartScreen(onStartTasks: switchScreen);
+
+    if (activeScreen == 'tasks-screen') {
+      screenWidget = TasksScreen(tasks: _registeredTasks, onAddTask: _addTask, onRemoveTask: _removeTask);
+    }
 
     return MaterialApp(
       title: 'Task Planner',

@@ -33,7 +33,7 @@ class StartScreen extends StatelessWidget {
               const SizedBox(height: 12,),
               
               OutlinedButton.icon(
-                onPressed: () {},
+                onPressed: onStartTasks,
                 icon: const Icon(
                   Icons.arrow_forward,
                   color: Colors.black,
