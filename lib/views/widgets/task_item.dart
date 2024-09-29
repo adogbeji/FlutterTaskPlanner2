@@ -8,10 +8,10 @@ class TaskItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Task Item'),
-      ),
+    return Column(
+      children: [
+        Text(task.title),
+      ],
     );
   }
 }
