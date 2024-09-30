@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:task_planner_2/models/task.dart';
+import 'package:task_planner_2/views/widgets/tasks_list.dart';
 
 class TasksScreen extends StatefulWidget {
   const TasksScreen({super.key, required this.tasks, required this.onAddTask, required this.onRemoveTask});
@@ -16,10 +17,10 @@ class TasksScreen extends StatefulWidget {
 class _TasksScreenState extends State<TasksScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Tasks Screen'),
-      ),
+    return Scaffold(
+      body: widget.tasks.isEmpty ? const Center(
+        child: Text('No Tasks!'),
+      ): TasksList(tasks: widget.tasks, onRemoveTask: widget.onRemoveTask),
     );
   }
 }
