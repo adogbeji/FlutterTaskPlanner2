@@ -18,6 +18,16 @@ class _TasksScreenState extends State<TasksScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.redAccent,
+        title: const Text('Tasks Screen'),
+        actions: [
+          InkWell(
+            onTap: () {},
+            child: const Icon(Icons.add),
+          ),
+        ],
+      ),
       body: widget.tasks.isEmpty ? const Center(
         child: Text('No Tasks!'),
       ): TasksList(tasks: widget.tasks, onRemoveTask: widget.onRemoveTask),
