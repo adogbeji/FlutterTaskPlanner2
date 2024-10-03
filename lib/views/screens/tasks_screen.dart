@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:task_planner_2/models/task.dart';
+import 'package:task_planner_2/views/widgets/new_task.dart';
 import 'package:task_planner_2/views/widgets/tasks_list.dart';
 
 class TasksScreen extends StatefulWidget {
@@ -15,6 +16,10 @@ class TasksScreen extends StatefulWidget {
 }
 
 class _TasksScreenState extends State<TasksScreen> {
+  void _openModal() {
+    showModalBottomSheet(context: context, builder: (context) => NewTask(widget.onAddTask),);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +28,7 @@ class _TasksScreenState extends State<TasksScreen> {
         title: const Text('Tasks Screen'),
         actions: [
           InkWell(
-            onTap: () {},
+            onTap: _openModal,
             child: const Icon(Icons.add),
           ),
         ],
