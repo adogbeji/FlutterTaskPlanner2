@@ -11,11 +11,17 @@ class NewTask extends StatefulWidget {
 }
 
 class _NewTaskState extends State<NewTask> {
+  final _nameController = TextEditingController();
+  Category _selectedCategory = Category.leisure;
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('New Task'),
+    return const Padding(
+      padding: EdgeInsets.all(8),
+      child: Column(
+        children: [
+          TextField(),
+        ],
       ),
     );
   }

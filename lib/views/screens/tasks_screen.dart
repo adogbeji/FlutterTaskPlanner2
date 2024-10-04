@@ -17,7 +17,7 @@ class TasksScreen extends StatefulWidget {
 
 class _TasksScreenState extends State<TasksScreen> {
   void _openModal() {
-    showModalBottomSheet(context: context, builder: (context) => NewTask(widget.onAddTask),);
+    showModalBottomSheet(context: context, builder: (ctx) => NewTask(widget.onAddTask),);
   }
 
   @override
