@@ -16,11 +16,18 @@ class _NewTaskState extends State<NewTask> {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(8),
+    return Padding(
+      padding: const EdgeInsets.all(8),
       child: Column(
         children: [
-          TextField(),
+          TextField(
+            controller: _nameController,
+            maxLength: 50,
+            decoration: const InputDecoration(
+              labelText: 'Name',
+              hintText: 'Enter Name...',
+            ), 
+          ),
         ],
       ),
     );
