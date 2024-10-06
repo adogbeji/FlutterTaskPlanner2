@@ -25,8 +25,20 @@ class _NewTaskState extends State<NewTask> {
             maxLength: 50,
             decoration: const InputDecoration(
               labelText: 'Name',
-              hintText: 'Enter Name...',
+              hintText: 'Enter task name...',
             ), 
+          ),
+
+          Row(
+            children: [
+              const Text('No date selected!'),
+              IconButton(
+                onPressed: () {
+                  print('Pressed');
+                },
+                icon: const Icon(Icons.calendar_month),
+              ),
+            ]
           ),
         ],
       ),
