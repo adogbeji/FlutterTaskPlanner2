@@ -44,10 +44,19 @@ class _NewTaskState extends State<NewTask> {
           Row(
             children: [
               DropdownButton(
+                value: _selectedCategory,
                 items: Category.values.map((category) => DropdownMenuItem(
-                  child: Text(category.name.toUpperCase()),
-                ),).toList(), 
-                // onChanged: onChanged
+                  value: category,
+                  child: Text(category.name),
+                ),).toList(),
+                onChanged: (value) {
+                  if (value == null) {
+                    return;
+                  }
+                  setState(() {
+                    _selectedCategory = value;
+                  });
+                },
               ),
             ],
           ),
