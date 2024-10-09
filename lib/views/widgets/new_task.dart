@@ -26,29 +26,29 @@ class _NewTaskState extends State<NewTask> {
             decoration: const InputDecoration(
               labelText: 'Name',
               hintText: 'Enter task name...',
-            ), 
+            ),
           ),
-
-          Row(
-            children: [
-              const Text('No date selected!'),
-              IconButton(
-                onPressed: () {
-                  print('Pressed');
-                },
-                icon: const Icon(Icons.calendar_month),
-              ),
-            ]
-          ),
-
+          Row(children: [
+            const Text('No date selected!'),
+            IconButton(
+              onPressed: () {
+                print('Pressed');
+              },
+              icon: const Icon(Icons.calendar_month),
+            ),
+          ]),
           Row(
             children: [
               DropdownButton(
                 value: _selectedCategory,
-                items: Category.values.map((category) => DropdownMenuItem(
-                  value: category,
-                  child: Text(category.name),
-                ),).toList(),
+                items: Category.values
+                    .map(
+                      (category) => DropdownMenuItem(
+                        value: category,
+                        child: Text(category.name),
+                      ),
+                    )
+                    .toList(),
                 onChanged: (value) {
                   if (value == null) {
                     return;
@@ -57,6 +57,15 @@ class _NewTaskState extends State<NewTask> {
                     _selectedCategory = value;
                   });
                 },
+              ),
+              
+              TextButton(
+                onPressed: () {},
+                child: const Text('Cancel'),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Save'),
               ),
             ],
           ),
