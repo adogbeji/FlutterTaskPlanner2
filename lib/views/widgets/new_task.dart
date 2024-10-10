@@ -13,6 +13,11 @@ class NewTask extends StatefulWidget {
 class _NewTaskState extends State<NewTask> {
   final _nameController = TextEditingController();
   Category _selectedCategory = Category.leisure;
+  
+  // Shows Datepicker
+  _openDatePicker() async {
+    final today = DateTime.now();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +63,8 @@ class _NewTaskState extends State<NewTask> {
                   });
                 },
               ),
+
+              const Spacer(),
               
               TextButton(
                 onPressed: () {},
@@ -65,6 +72,9 @@ class _NewTaskState extends State<NewTask> {
               ),
               ElevatedButton(
                 onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.purple.shade200,
+                ),
                 child: const Text('Save'),
               ),
             ],
