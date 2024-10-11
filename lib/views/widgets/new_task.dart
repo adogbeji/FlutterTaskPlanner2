@@ -1,3 +1,5 @@
+import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
 import 'package:task_planner_2/models/task.dart';
 
@@ -17,6 +19,10 @@ class _NewTaskState extends State<NewTask> {
   // Shows Datepicker
   _openDatePicker() async {
     final today = DateTime.now();
+    final firstDate = DateTime(today.year - 1, today.month, today.day);
+    final lastDate = DateTime(today.year, today.month, today.day + 3);
+    final defaultDate = DateTime(today.year, today.month, today.day);
+    // final defaultDate = today;
   }
 
   @override
