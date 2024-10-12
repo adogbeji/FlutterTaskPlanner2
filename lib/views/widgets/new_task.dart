@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:flutter/material.dart';
 import 'package:task_planner_2/models/task.dart';
 
@@ -15,6 +13,7 @@ class NewTask extends StatefulWidget {
 class _NewTaskState extends State<NewTask> {
   final _nameController = TextEditingController();
   Category _selectedCategory = Category.leisure;
+  DateTime? _selectedDate;
   
   // Shows Datepicker
   _openDatePicker() async {
@@ -23,6 +22,17 @@ class _NewTaskState extends State<NewTask> {
     final lastDate = DateTime(today.year, today.month, today.day + 3);
     final defaultDate = DateTime(today.year, today.month, today.day);
     // final defaultDate = today;
+
+
+    final pickedDate = await showDatePicker(
+      context: context, 
+      firstDate: firstDate, 
+      lastDate: lastDate,
+      initialDate: defaultDate
+    );
+    setState(() {
+      _selectedDate = pickedDate;
+    });
   }
 
   @override
@@ -42,9 +52,7 @@ class _NewTaskState extends State<NewTask> {
           Row(children: [
             const Text('No date selected!'),
             IconButton(
-              onPressed: () {
-                print('Pressed');
-              },
+              onPressed: _openDatePicker,
               icon: const Icon(Icons.calendar_month),
             ),
           ]),
