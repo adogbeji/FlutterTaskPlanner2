@@ -50,7 +50,7 @@ class _NewTaskState extends State<NewTask> {
             ),
           ),
           Row(children: [
-            const Text('No date selected!'),
+            Text(_selectedDate == null ? 'No date selected!': formatter.format(_selectedDate!),),
             IconButton(
               onPressed: _openDatePicker,
               icon: const Icon(Icons.calendar_month),
