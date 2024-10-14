@@ -35,6 +35,17 @@ class _NewTaskState extends State<NewTask> {
     });
   }
 
+  // Saves New Tasks
+  void _addNewTask() {
+    print(_nameController.text);
+    print(_selectedDate);
+
+
+    if (_nameController.text.trim().isEmpty || _selectedDate == null) {
+      // Show Error Message
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -85,7 +96,7 @@ class _NewTaskState extends State<NewTask> {
                 child: const Text('Cancel'),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: _addNewTask,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple.shade200,
                 ),
