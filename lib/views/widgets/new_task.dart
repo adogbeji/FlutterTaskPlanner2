@@ -43,6 +43,13 @@ class _NewTaskState extends State<NewTask> {
 
     if (_nameController.text.trim().isEmpty || _selectedDate == null) {
       // Show Error Message
+      showDialog(
+        context: context,
+        builder: (ctx) => const AlertDialog(
+          title: Text('Invalid Input!'),
+          content: Text('Please enter a valid task name!'),
+        ),
+      );
     }
   }
 
