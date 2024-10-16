@@ -45,11 +45,20 @@ class _NewTaskState extends State<NewTask> {
       // Show Error Message
       showDialog(
         context: context,
-        builder: (ctx) => const AlertDialog(
-          title: Text('Invalid Input!'),
-          content: Text('Please enter a valid task name!'),
+        builder: (ctx) => AlertDialog(
+          title: const Text('Invalid Input!'),
+          content: const Text('Please enter a valid task name!'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+              },
+              child: const Text('Ok'),
+            ),
+          ],
         ),
       );
+      return;  // Stops function execution
     }
   }
 
