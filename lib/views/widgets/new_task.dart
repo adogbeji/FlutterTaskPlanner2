@@ -73,6 +73,13 @@ class _NewTaskState extends State<NewTask> {
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    _nameController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8),
