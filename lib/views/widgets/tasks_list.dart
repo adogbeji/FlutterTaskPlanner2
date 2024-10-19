@@ -14,7 +14,13 @@ class TasksList extends StatelessWidget {
     return ListView.builder(
       itemCount: tasks.length,
       itemBuilder: (context, index) {
-        return TaskItem(tasks[index]);
+        return Dismissible(
+          key: ValueKey(tasks[index]),
+          onDismissed: (direction) {
+            onRemoveTask(tasks[index]);
+          },
+          child: TaskItem(tasks[index]),
+        );
       },
     );
   }
